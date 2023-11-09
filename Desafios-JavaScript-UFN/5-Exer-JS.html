@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecione 2 times</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #selectionForm {
+            text-align: center;
+            border: 1px solid black;
+            padding: 20px;
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <form id="selectionForm">
+        <P>Selecione dois times ou mais, para funcionar: </P>
+        <input type="checkbox" name="item" value="item1"> São Paulo<br>
+        <input type="checkbox" name="item" value="item2"> Botafogo-PB<br>
+        <input type="checkbox" name="item" value="item3"> Fluminense<br>
+        <input type="checkbox" name="item" value="item3"> Grêmio<br>
+        <input type="checkbox" name="item" value="item4"> Internacional<br>
+        <input type="checkbox" name="item" value="item5"> Palmeiras<br>
+        <input type="checkbox" name="item" value="item6"> Santos<br>
+        <input type="checkbox" name="item" value="item7"> Corinthias<br>
+        <input type="checkbox" name="item" value="item8"> Vasco<br>
+        <br><br>
+        <button type="submit" id="submitBtn" disabled>Correto</button>
+    </form>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const submitBtn = document.getElementById('submitBtn');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                let count = 0;
+                checkboxes.forEach(cb => {
+                    if (cb.checked) count++;
+                });
+
+                if (count >= 2) {
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.disabled = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

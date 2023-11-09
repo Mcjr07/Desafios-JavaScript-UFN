@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios JavaScript - 6-7-8</title>
+</head>
+<style>
+    button {
+        margin: 5px 0 5px;
+        width: 100px;
+        border-radius: 5px;
+
+    }
+
+    body {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Desafio JavaScript UFN/ATOS </h1>
+
+    <p id="paragrafo">A Atos foi formada pela fusão de duas prestadoras de serviços de TI, a Axime e a Sligos, na
+        França, em 1997. Atualmente, a companhia é uma das principais empresas de consultoria e soluções do setor de TI
+        do mundo. Hoje, a Atos trabalha com inteligência artificial, segurança cibernética, servidores corporativos,
+        computação de alto desempenho, IoT, banco de dados e redes, suporte técnico, entre outros. Além disso, o grupo
+        atua com sistemas de automação e robóticos, pagamentos digitais e soluções de nuvem. De acordo com a companhia,
+        a missão da Atos é apoiar seus clientes em suas ambições digitais.</p>
+
+
+    <button onclick="handleButton('plus')">+</button>
+    <button onclick="handleButton('minus')">-</button><br>
+    <button onclick="handleButton('upperCase')">Texto maiúsculo</button>
+    <button onclick="handleButton('lowerCase')">Texto minúsculo</button><br>
+    <button onclick="handleButton('wFont')">Fonte branca</button>
+    <button onclick="handleButton('bFont')">Fonte preta</button><br>
+    <button onclick="handleButton('wBackground')">Cor de Fundo branca</button>
+    <button onclick="handleButton('bBackground')">Cor de Fundo preta</button><br>
+
+ <script>
+        let paragrafo = document.querySelector("#paragrafo");
+        var fontSize = 14;
+        function handleButton(button) {
+  switch (button) {
+    case "bBackground":
+      paragrafo.style.backgroundColor = "black";
+      break;
+    case "wBackground":
+      paragrafo.style.backgroundColor = "white";
+      break;
+    case "wFont":
+      paragrafo.style.color = "white";
+      break;
+    case "bFont":
+      paragrafo.style.color = "black";
+      break;
+    case "upperCase":
+      paragrafo.style.textTransform = "uppercase";
+      break;
+    case "lowerCase":
+      paragrafo.style.textTransform = "lowercase";
+      break;
+    case "plus":
+      fontSize += 2;
+      paragrafo.style.fontSize = `${fontSize}px`;
+      break;
+    case "minus":
+      fontSize -= 2;
+      paragrafo.style.fontSize = `${fontSize}px`;
+      break;
+    default:
+      break;
+     
+    }
+}
+ </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Cadastro Cliente</h1>
+    <div style="max-width: 250px; margin: 0 auto; padding: 20px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 8px;">
+        <form id="client-form">
+            <div style="margin-bottom: 10px;">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="person">Pessoa:</label>
+                <input type="radio" id="fisica" name="person" value="fisica" required onclick="toggleFields()">
+                <label for="fisica">Física</label>
+                <input type="radio" id="juridica" name="person" value="juridica" onclick="toggleFields()">
+                <label for="juridica">Jurídica</label>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" disabled>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" disabled>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="birthdate">Data de Nascimento:</label>
+                <input type="text" id="birthdate" name="birthdate" disabled>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="phone">Telefone:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div>
+                <input type="submit" value="Cadastrar">
+                <button type="button" onclick="clearFields()">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleFields() {
+            var fisicaChecked = document.getElementById('fisica').checked;
+            document.getElementById('cpf').disabled = !fisicaChecked;
+            document.getElementById('birthdate').disabled = !fisicaChecked;
+            document.getElementById('cnpj').disabled = fisicaChecked;
+        }
+
+        function clearFields() {
+            var textInputs = document.querySelectorAll('input[type="text"]');
+            var emailInput = document.getElementById('email');
+            var radioInputs = document.querySelectorAll('input[type="radio"]');
+            
+            textInputs.forEach(function (input) {
+                input.value = '';
+            });
+
+            emailInput.value = '';
+
+            radioInputs.forEach(function (radio) {
+                radio.checked = false;
+            });
+
+            document.getElementById('cpf').disabled = true;
+            document.getElementById('cnpj').disabled = true;
+            document.getElementById('birthdate').disabled = true;
+        }
+    </script>
+</body>
+</html>

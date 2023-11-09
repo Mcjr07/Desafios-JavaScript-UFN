@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    padding: 120px;
+    background-color: white;
+    text-align: center;
+}
+</style>
+<script>
+function changeColor(color) {
+    document.body.style.backgroundColor = color;
+}
+</script>
+</head>
+<body>
+<h1>Escolha uma Cor</h1>
+<select onchange="changeColor(this.value)">
+ <option value="">Escolha</option>  
+ <option value="red">Vermelho</option>
+ <option value="green">Verde</option>
+ <option value="blue">Azul</option>
+ <option value="yellow">Amarelo</option>
+</select>
+</body>
+</html>

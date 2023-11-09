@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: white;
+    text-align: center;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    $("button").click(function () {
+        var color = $(this).data("color");
+        changeColor(color);
+    });
+
+    function changeColor(color) {
+        $("body").css("background-color", color);
+    }
+});
+</script>
+</head>
+<body>
+<h1>Click Aqui</h1>
+<button data-color="red">Vermelho</button>
+<button data-color="green">Verde</button>
+<button data-color="blue">Azul</button>
+<button data-color="yellow">Amarelo</button>
+</body>
+</html>

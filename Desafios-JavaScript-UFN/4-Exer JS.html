@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #meuTexto {
+            display: none; /* Inicia oculto */
+        }
+    </style>
+</head>
+<body style="text-align: center; padding: 150px;">
+<h1>Click para mostrar a Mensagem</h1>
+<div>
+    <p id="meuTexto">Olá Mundo! :)</p>
+    <button id="Btn">Clique para mostrar o texto</button>
+</div>
+
+<script>
+document.getElementById("Btn").addEventListener("click", function() {
+    var text = document.getElementById("meuTexto");
+
+    if (text.style.display === "none" || text.style.display === "") {
+        text.style.display = "block";
+    } else {
+        text.style.display = "none"; 
+    }
+});
+</script>
+
+</body>
+</html>
