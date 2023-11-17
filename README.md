@@ -1,4 +1,4 @@
-# Desafios-JavaScript-UFN-ATS
+# Desafios-JavaScript-UFN
 
 # Lista do Desafio:
 
